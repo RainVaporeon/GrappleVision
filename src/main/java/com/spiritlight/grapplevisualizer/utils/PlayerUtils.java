@@ -14,7 +14,7 @@ public class PlayerUtils {
     public static boolean canGrapple() {
         final EntityPlayer player = Main.mc.player;
         if(player == null) return false;
-        if(holdingBow()) return false;
+        if(!holdingBow()) return false;
         RayTraceResult result = player.rayTrace(Main.config.getMaxReachDistance(), 10.0f);
         return result != null && result.typeOfHit != RayTraceResult.Type.MISS;
     }
