@@ -13,4 +13,8 @@ public class PlayerUtils {
         RayTraceResult result = player.rayTrace(Main.config.getMaxReachDistance(), 10.0f);
         return result != null && result.typeOfHit != RayTraceResult.Type.MISS;
     }
+
+    public static boolean holdingBow() {
+        return Main.mc.player.inventory.getCurrentItem().getItem() instanceof ItemBow;
+    }
 }

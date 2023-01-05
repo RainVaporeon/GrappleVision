@@ -11,7 +11,9 @@ public class UITextRenderEvent {
     public void onTextRender(RenderGameOverlayEvent event) {
         if (event.getType() == RenderGameOverlayEvent.ElementType.TEXT)
             Main.mc.fontRenderer.drawStringWithShadow(
-                    PlayerUtils.canGrapple() ? TextFormatting.GREEN + "[Can Grapple]" : TextFormatting.RED + "[Cannot Grapple]",
+                    PlayerUtils.holdingBow() ?
+                            PlayerUtils.canGrapple() ? TextFormatting.GREEN + "[Can Grapple]" : TextFormatting.RED + "[Cannot Grapple]" :
+                            TextFormatting.GRAY + "[Not Holding Bow]",
                     Main.config.getMode().getX(),
                     Main.config.getMode().getY(),
                     0xFFFFFF // white

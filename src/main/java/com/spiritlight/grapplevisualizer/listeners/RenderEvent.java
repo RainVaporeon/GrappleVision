@@ -21,10 +21,10 @@ public class RenderEvent {
         if(!PlayerUtils.canGrapple()) return;
         if(Main.config.getMode() == DisplayMode.DISABLED) return;
         final EntityPlayer player = Minecraft.getMinecraft().player;
-        RayTraceResult result = player.rayTrace(Main.config.getMaxReachDistance(), 1.0f);
+        RayTraceResult result = player.rayTrace(Main.config.getMaxReachDistance(), 0.0f);
         BlockPos pos = result.getBlockPos(); // result != null if PlayerUtils.canGrapple() == true
         if(pos.getDistance((int) player.posX ,(int) player.posY,(int) player.posZ) <= 5.0d) return;
-        RenderUtils.drawBlockESP(pos, new Color(64, 255, 64, 0), 1.0f);
+        RenderUtils.drawBlockESP(pos, new Color(64, 255, 64, 0), 0.0f);
         RenderUtils.drawOutlinedBox(new AxisAlignedBB(pos));
     }
 }
