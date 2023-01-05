@@ -15,7 +15,7 @@ public class PlayerUtils {
         final EntityPlayer player = Main.mc.player;
         if(player == null) return false;
         if(!holdingBow()) return false;
-        RayTraceResult result = player.rayTrace(Main.config.getMaxReachDistance(), 10.0f);
+        RayTraceResult result = player.rayTrace(Main.config.getMaxReachDistance(), 0.0f);
         return result != null && result.typeOfHit != RayTraceResult.Type.MISS;
     }
 

@@ -8,7 +8,6 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
-import org.lwjgl.Sys;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Arrays;
